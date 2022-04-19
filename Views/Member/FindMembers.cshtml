@@ -1,0 +1,48 @@
+﻿@model IEnumerable<FirstTask.Models.Member>
+@{
+    ViewBag.Title = "FindMembers";
+}
+
+<h1>Find_Your_Member</h1>
+
+@if (Model.Count() == 0)
+{
+    <div class=" danger alert alert-danger col-md-4" role="alert">
+        <h5>Sorry There Is No <strong>Members</strong></h5>
+    </div>
+}
+else
+{
+    <div class="table-responsive">
+        <table class=" mainTable  text-center table-dark table-striped table table-bordered">
+
+            <tr>
+            <thead>
+            <th>#@Html.DisplayNameFor(pp => pp.MemberId)</th>
+
+            <th>@Html.DisplayNameFor(pp => pp.FirstName)</th>
+            <th>@Html.DisplayNameFor(pp => pp.SocilID)</th>
+            <th>@Html.DisplayNameFor(pp => pp.File)</th>
+            <th>Mange</th>
+            </thead>
+            </tr>
+            @foreach (var member in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(pp => member.MemberId)</td>
+                    <td>@Html.DisplayFor(pp => member.FirstName)</td>
+                    <td>@Html.DisplayFor(pp => member.SocilID)</td>
+                    <td>
+                        @*<img src="D:\WebDevelpment/ITI(.NET)/code/FirstTask/Resources/8fae64077c20c981e9b1dc5975e528eb.jpg"alt="No Photo" height="100" width="100"/>*@
+                        <a href="~/Resources/@Html.DisplayFor(pp => member.File)"><img src="~/Resources/@Html.DisplayFor(pp => member.File)" style="height:40px;width:90px;" /></a>
+                    </td>
+                    <td>
+                        <a href="@Url.Action("EditMember", "Member", new { id = member.MemberId })" class="btn btn-success"><i class="fas fa-edit"></i> Edit</a>
+                        <a href="@Url.Action("DeleteMember", "Member", new { id = member.MemberId })" onclick="return confirm('Are You Sure To Delete This Member ')" class="btn btn-danger"><i class="fas fa-times"></i> Delete</a>
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+}

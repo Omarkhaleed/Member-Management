@@ -1,0 +1,51 @@
+﻿@model Member
+@{
+    ViewBag.Title = "Index";
+}
+ 
+<br />
+                           
+<div class="row">                      
+    <div class="col-md-6">    
+        <h2>Welcome You!<br /><br />In<br /><br />Our System</h2>
+    </div>
+  
+    <div class=" col-md-6" style="position: relative;top:17px;">
+        <form  name="myForm" class="form" action="~/Member/FindMembers" method="get" onsubmit="return validateForm()">
+            <input  class="  form-control my-2 my-sm-0" type="search" name="Id" placeholder="ID...."  required/>
+            <input class="submit  btn btn-outline-info" type="submit" value="Search">
+        </form>
+       
+        <div class="right">
+            <div class=" svg-show card card-new" style="width: 18rem;">
+                <a href="~/Member/AddMember">
+                    <div class="card-body">
+                        <h5 class="card-title">New Member</h5>
+                        <i class="fas fa-user-plus"></i>
+                        @*<span class="card-text"></span>*@
+                    </div>
+                </a>
+
+
+            </div>
+            <div class=" svg-show card card-new" style="width: 18rem;">
+                <a href="~/Member/ShowMembers">
+                    <div class="card-body">
+                        <h5 class="card-title"> Our Members</h5>
+                        <i class="fa fa-users"></i>
+
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </div>
+   
+</div>
+
+
+
+
+@*<div class="col-md-12">
+  
+</div>*@

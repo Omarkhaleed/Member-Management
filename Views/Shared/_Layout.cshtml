@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>@ViewBag.Title</title>
+    <!--Jquery Datepicker-->
+    <link href="~/Content/jquery-ui.css" rel="stylesheet" />
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="~/Content/scrolling-nav.css" rel="stylesheet" />
+    <!-- css file-->
+    <link rel="stylesheet" href="~/Content/Style.css" />
+    <!-- fontawsem link cdn-->
+
+    <script>
+        function validateForm() {
+            let x = document.forms["myForm"]["Id"].value;
+            if (isNaN(x)) {
+                alert("Sorry, ID must be a Number");
+                return false;
+            }
+        }
+        @*function validateData() {
+            let x = document.forms["validate"]["social"].len;
+                if (x<14 || x>14) {
+                alert("Sorry, Social Id must be only 14 numbers");
+                    return false;
+                }
+            }
+    *@
+    </script>
+
+
+    <script defer src="~/fontawesome/js/all.js"></script> <!--load all styles -->
+
+
+    <link href="~/fontawesome/css/all.css" rel="stylesheet"> <!--load all styles -->
+    @*<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">*@
+    <!-- Google Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="  navbar navbar-expand-lg navbar-dark bg-primary fixed-top " id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top"><span style="color: #00b8ff !important;
+        font-weight: bold;
+        font-family: verdana !important;
+        font-size: 23px;
+    "><i>Software</i></span><b> Development</b></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="~/Member/Index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="~/Member/ShowMembers">Members</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="~/Member/AddMember">NewMember</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <section id="home" style="height:55px;">
+        <div class="container">
+            @*<div class="row">*@
+
+                @RenderBody()
+
+            @*</div>*@
+        </div>
+    </section>
+ 
+    <!-- java script bootstrap link cdn-->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+  
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="~/Scripts/jquery-3.6.0.min.js"></script>
+    <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+    <!-- Plugin JavaScript -->
+    <script src="~/Scripts/jquery.easing.1.3.js"></script>
+    <!-- Custom JavaScript for this theme -->
+    <script src="~/Scripts/scrolling-nav.js"></script>
+
+    <!--Jquery validation-->
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+
+    <script src="~/Scripts/jquery.js"></script>
+    <script src="~/Scripts/jquery-ui.js"></script>
+    @RenderSection("scripts", false)
+</body>
+
+</html>
